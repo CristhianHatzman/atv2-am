@@ -1,0 +1,54 @@
+@baseUrl = http://127.0.0.1:8000
+
+### 1. Metadados do serviço
+GET {{baseUrl}}/info
+User-Agent: Client-Avaliativo
+Accept: application/json
+
+### 2. Predição válida — Perfil A (classe No, validado no modelo treinado)
+POST {{baseUrl}}/predict
+User-Agent: Client-Avaliativo
+Content-Type: application/json
+
+{
+  "tenure": 34,
+  "MonthlyCharges": 56.95,
+  "TotalCharges": 1889.5,
+  "Contract": "One year",
+  "InternetService": "DSL",
+  "OnlineSecurity": "Yes",
+  "TechSupport": "No",
+  "PaymentMethod": "Mailed check"
+}
+
+### 3. Predição válida — Perfil B (classe Yes, validado no modelo treinado)
+POST {{baseUrl}}/predict
+User-Agent: Client-Avaliativo
+Content-Type: application/json
+
+{
+  "tenure": 1,
+  "MonthlyCharges": 29.85,
+  "TotalCharges": 29.85,
+  "Contract": "Month-to-month",
+  "InternetService": "DSL",
+  "OnlineSecurity": "No",
+  "TechSupport": "No",
+  "PaymentMethod": "Electronic check"
+}
+
+### 4. Entrada inválida — deve retornar HTTP 422
+POST {{baseUrl}}/predict
+User-Agent: Client-Avaliativo
+Content-Type: application/json
+
+{
+  "tenure": "invalido",
+  "MonthlyCharges": 56.95,
+  "TotalCharges": 1889.5,
+  "Contract": "One year",
+  "InternetService": "DSL",
+  "OnlineSecurity": "Yes",
+  "TechSupport": "No",
+  "PaymentMethod": "Mailed check"
+}
