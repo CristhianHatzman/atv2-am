@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AT2 — Redes Neurais MLP e Deploy de API em Produção
 
 Projeto acadêmico de classificação binária para prever o cancelamento (`Churn`) de clientes de telecomunicações. Ele documenta a exploração de dados, treina uma rede neural MLP em um pipeline Scikit-Learn e disponibiliza inferências por uma API FastAPI.
@@ -79,3 +80,6 @@ Com o servidor em execução, abra `requisicoes.http` no VS Code e use a extens�
 ## Limitações
 
 O conjunto possui desbalanceamento de classes e o recall de `Yes` é moderado; portanto, parte dos cancelamentos reais não é identificada. O modelo não substitui uma decisão de retenção e deve ser reavaliado se o perfil de clientes ou as políticas comerciais mudarem.
+=======
+# atv2-am
+>>>>>>> 030217854e9d752930c32fb26504bddb6eb2bcd3
